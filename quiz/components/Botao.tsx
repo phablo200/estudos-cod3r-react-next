@@ -10,7 +10,7 @@ interface BotaoProps {
 const Botao = (props: BotaoProps) => {
 	
 	const renderizarBotao = () => (
-		<button className={styles.botao}>
+		<button className={styles.botao} onClick={props.onClick}>
 			{props.texto}
 		</button>
 	);
