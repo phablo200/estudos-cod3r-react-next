@@ -7,6 +7,7 @@ interface ListaRodapeProps {
 }
 
 const ListaRodape = (props: ListaRodapeProps) => {
+
     const { tarefas, mudou } = props;
 
     const renderizarQtdDeItens = () => {
@@ -20,6 +21,7 @@ const ListaRodape = (props: ListaRodapeProps) => {
                         ? ' Tarefa encontrada' 
                         : ' Tarefas encontradas'}
                 </span>
+                <span className="flex-1 hidden lg:inline"></span>
             </>
         );
     };
@@ -33,17 +35,14 @@ const ListaRodape = (props: ListaRodapeProps) => {
                     >
                     Todas
                 </ListaBotao>
-                
                 <ListaBotao selecionado={tarefas.exibindoSomenteAtivas()}
                     onClick={() => mudou(tarefas.filtrarAtivas())}
-                    className="hidden md:inline"
+                    className="mx-4"
                     >
                     Ativas
                 </ListaBotao>
-
                 <ListaBotao selecionado={tarefas.exibindoSomenteConcluidas()}
                     onClick={() => mudou(tarefas.filtrarConcluidas())}
-                    className="hidden md:inline"
                     >
                     Concluidas
                 </ListaBotao>
@@ -52,7 +51,14 @@ const ListaRodape = (props: ListaRodapeProps) => {
     };
 
     const renderizarExcluirConcluidas = () => {
-
+        return (
+            <>
+                <span className="flex-grow"></span>
+                <ListaBotao onClick={() => mudou(tarefas.excluirConcluidas())}>
+                    Excluir <span className="hidden md:inline">concluídas</span>
+                </ListaBotao>
+            </>
+        ); 
     };
 
     return (

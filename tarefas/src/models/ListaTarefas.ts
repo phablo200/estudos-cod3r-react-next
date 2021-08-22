@@ -67,6 +67,7 @@ class ListaTarefas {
     }
 
     exibindoTodas(): boolean {
+        console.log('this.#filtroUtilizado', this.#filtroUtilizado);
         return this.#filtroUtilizado === TipoFiltro.NENHUM;
     }
 

@@ -6,16 +6,13 @@ interface ListaBotaoProps {
 }
 
 const ListaBotao = (props: ListaBotaoProps) => {
-
     const borda = props.selecionado ? 'border-b-4 border-purple-400' : '';
-
     return (
         <button onClick={props.onClick} className={`
             text-gray-500 
             font-semibold 
             hover:text-black 
             focus:outline-none
-            border-b-4 border-purple-400
             ${borda}
             ${props.className}
         `}>
