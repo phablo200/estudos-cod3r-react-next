@@ -5,7 +5,6 @@ import Tabela from '../components/Tabela';
 import useClientes from '../hooks/useClientes';
 
 export default function Home() {
-  
   const { 
     cliente,
     clientes,
@@ -16,8 +15,6 @@ export default function Home() {
     tabelaVisivel,
     exibirTabela 
   } = useClientes();
-
-
 
   return (
     <div className={`
